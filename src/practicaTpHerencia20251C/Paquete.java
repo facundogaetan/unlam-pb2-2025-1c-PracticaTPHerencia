@@ -45,6 +45,10 @@ public class Paquete {
 	public void setPeso(double peso) {
 		this.peso = peso;
 	}
+
+	public double calcularVolumen() {
+		return alto * ancho * profundo;
+	}
 	
 	
 
