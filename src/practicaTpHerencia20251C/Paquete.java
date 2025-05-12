@@ -49,7 +49,5 @@ public class Paquete {
 	public double calcularVolumen() {
 		return alto * ancho * profundo;
 	}
-	
-	
 
 }

@@ -11,13 +11,11 @@ public class Bicicleta extends Transporte {
 
 	@Override
 	public boolean puedeLlevar(Paquete paquete) {
-		if(paquetes.size() < MAX_PAQUETES && paquete.calcularVolumen() <= MAX_VOLUMEN_POR_PAQUETE && 
-				paquete.getPeso() <= MAX_PESO_POR_PAQUETE) {
+		if (paquetes.size() < MAX_PAQUETES && paquete.calcularVolumen() <= MAX_VOLUMEN_POR_PAQUETE
+				&& paquete.getPeso() <= MAX_PESO_POR_PAQUETE) {
 			return true;
 		}
 		return false;
 	}
-	
-	
 
 }
