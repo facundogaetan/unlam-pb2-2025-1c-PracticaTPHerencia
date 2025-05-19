@@ -6,12 +6,14 @@ public class Paquete {
 	private double alto;
 	private double profundo;
 	private double peso;
+	Ciudad ciudadDestino;
 
-	public Paquete(double ancho, double alto, double profundo, double peso) {
+	public Paquete(double ancho, double alto, double profundo, double peso, Ciudad ciudadDestino) {
 		this.ancho = ancho;
 		this.alto = alto;
 		this.profundo = profundo;
 		this.peso = peso;
+		this.ciudadDestino = ciudadDestino;
 	}
 
 	public double getAncho() {
@@ -48,6 +50,10 @@ public class Paquete {
 
 	public double calcularVolumen() {
 		return alto * ancho * profundo;
+	}
+
+	public Ciudad getCiudadDestino() {
+		return ciudadDestino;
 	}
 
 }
