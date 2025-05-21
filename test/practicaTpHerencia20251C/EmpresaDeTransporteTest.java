@@ -141,41 +141,29 @@ public class EmpresaDeTransporteTest {
 		Paquete nuevoPaquete2 = new Paquete(0.1, 0.1, 0.1, 4.0, nuevaCiudad2); // 0,1 m3 y 3k de peso
 
 		assertTrue(nuevoAuto.agregarPaquete(nuevoPaquete));
-		assertTrue(nuevoAuto.agregarPaquete(nuevoPaquete2));
+		assertFalse(nuevoAuto.agregarPaquete(nuevoPaquete2));
+
+	}
+
+	@Test
+	public void dadoQueExisteUnCamionNoPuedoLlevarMasDeSuPesoPermitido() {
+		Camion nuevoCamion = new Camion();
+
+		Ciudad nuevaCiudad = new Ciudad("Buenos Aires");
+		Ciudad nuevaCiudad2 = new Ciudad("Bahia Blanca");
+		Ciudad nuevaCiudad3 = new Ciudad("Palermo");
+		Ciudad nuevaCiudad4 = new Ciudad("Ciudad Gotica");
+
+		Paquete nuevoPaquete = new Paquete(0.1, 0.1, 0.1, 5000.0, nuevaCiudad); // 0,1 m3 y 5t de peso
+		Paquete nuevoPaquete2 = new Paquete(0.1, 0.1, 0.1, 5000.0, nuevaCiudad2); // 0,1 m3 y 5t de peso
+		Paquete nuevoPaquete3 = new Paquete(0.1, 0.1, 0.1, 5000.0, nuevaCiudad3); // 0,1 m3 y 5t de peso
+		Paquete nuevoPaquete4 = new Paquete(0.1, 0.1, 0.1, 5000.0, nuevaCiudad4); // 0,1 m3 y 5t de peso
+
+		assertTrue(nuevoCamion.agregarPaquete(nuevoPaquete));
+		assertTrue(nuevoCamion.agregarPaquete(nuevoPaquete2));
+		assertTrue(nuevoCamion.agregarPaquete(nuevoPaquete3));
+		assertFalse(nuevoCamion.agregarPaquete(nuevoPaquete4));
 
 	}
 
 }
-/*
- * 
- * /******
- * 
- * }**
- * 
- * 
- * }** // probar con mas de 2 paquetes
- **
- * 
- * 
- * 
- * 
- * 
- * @Test public void dadoQueExisteUnTransportePuedoSumarElVolumenDeSuCarga() {
- * Automovil nuevoAutomovil = new Automovil();
- * 
- * Paquete nuevoPaquete = new Paquete(0.5, 0.5, 0.5, 3.0, "Callao 123"); //
- * 0.125 cu total 0.375 Paquete nuevoPaquete2 = new Paquete(0.5, 0.5, 0.5, 3.0,
- * "Callao 123"); Paquete nuevoPaquete3 = new Paquete(0.5, 0.5, 0.5, 3.0,
- * "Callao 123");
- * 
- * nuevoAutomovil.agregarPaquete(nuevoPaquete);
- * nuevoAutomovil.agregarPaquete(nuevoPaquete2);
- * nuevoAutomovil.agregarPaquete(nuevoPaquete3);
- * 
- * double volumenSumado = nuevoAutomovil.calcularVolumenTotal();
- * 
- * assertEquals(0.375, volumenSumado, 0000.1); }
- * 
- * @Test public void dadoQueExisteUnaEmpresaDeTransportePuedoAgregarUnCamion() {
- * Camion nuevoCamion = new Camion(); }
- */

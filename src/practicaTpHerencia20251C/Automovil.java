@@ -22,9 +22,15 @@ public class Automovil extends Transporte {
 		double volumenDisponible = MAX_VOLUMEN_PERMITIDO - calcularVolumenTotal();
 		double pesoDisponible = MAX_PESO_PERMITIDO - calcularPesoTotal();
 
+		for (Paquete p : paquetes) {
+			if (p.getCiudadDestino().equals(paquete.getCiudadDestino())) {
+				return false;
+			}
+
+		}
+
 		Set<Ciudad> ciudades = new HashSet<>();
 
-		
 		for (Paquete p : paquetes) {
 			ciudades.add(p.getCiudadDestino());
 		}
